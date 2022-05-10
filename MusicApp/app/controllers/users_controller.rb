@@ -8,13 +8,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(params[:email])
-        
-        if @user
-            render :show
-        else
-            render :new
-        end
+        @user = User.find(params[:id])
+        render :show
     end
 
     def create
@@ -22,8 +17,10 @@ class UsersController < ApplicationController
 
         if @user.save
             login(@user)
-            redirect_to user_url(@user.email)
+            flash[:success] = ["Successful creation!"]
+            redirect_to user_url(@user.id)
         else
+            flash.now[:errors] = @user.errors.full_messages
             render :new
         end
     end

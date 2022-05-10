@@ -11,12 +11,12 @@
 
   <body>
     <header>
-      <h1>~MUSIC APP:</h1>
-      <h2>FULLFILL ALL YOUR MUSIC INVENTORY NEEDS~</h2>
+      <h1>MUSIC APP:</h1>
+      <h2>~FULLFILL ALL YOUR MUSIC INVENTORY NEEDS~</h2>
       <% if logged_in? %>
         <h2>Hello! <%= current_user.email %>!</h2>
         <form action="<%= session_url %>" method="post">
-          <#%= auth_token %>
+          <%= auth_token %>
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Logout">
         </form>

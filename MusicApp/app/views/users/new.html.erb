@@ -1,8 +1,20 @@
 <h2>SIGN UP HERE:<h2>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>
+
+<% if flash[:success] %>
+    <% flash[:success].each do |msg| %>
+    <p><%= msg %></p>
+    <% end %>
+<% end %>
+
 <h3>
     <form action="<%= users_url %>" method="post">
-        <#%= auth_token %>
+        <%= auth_token %>
         <label>Email:
             <input type="email" name="user[email]" value="">
         </label>
