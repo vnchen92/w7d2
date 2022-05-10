@@ -2,8 +2,9 @@
 
 <h3>
     <form action="<%= users_url %>" method="post">
+        <#%= auth_token %>
         <label>Email:
-            <input type="text" name="user[email]" value="">
+            <input type="email" name="user[email]" value="">
         </label>
         <br>
         <label>Password:
