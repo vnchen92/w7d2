@@ -18,8 +18,10 @@ class BandsController < ApplicationController
         @band = Band.new(band_params)
 
         if @band.save
+            flash[:errors] = ["Band has been added"]
             redirect_to band_url(@band.id)
         else
+            flash.now[:errors] = ["Unsucesssful save"]
             render :new
         end
     end
