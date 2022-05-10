@@ -11,7 +11,8 @@
 
   <body>
     <header>
-      <h1>~MUSIC APP: FULLFILL ALL YOUR MUSIC INVENTORY NEEDS~</h1>
+      <h1>~MUSIC APP:</h1>
+      <h2>FULLFILL ALL YOUR MUSIC INVENTORY NEEDS~</h2>
       <% if logged_in? %>
         <h2>Hello! <%= current_user.email %>!</h2>
         <form action="<%= session_url %>" method="post">
